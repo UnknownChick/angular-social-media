@@ -1,10 +1,10 @@
-# Site Ecommerce Angular
+# Réseau social Angular
 
 Projet LP AMIO : Programmation web côté client
 
-Site web ecommerce dévelopé avec le framework Angular
+Réseau social dévelopé avec le framework Angular
 
-Voir le [projet](https://ecommerce-angular-one.vercel.app/)
+Voir le [projet]( )
 
 ## Navigation
 
@@ -27,6 +27,7 @@ Voir le [projet](https://ecommerce-angular-one.vercel.app/)
 + Node JS
 + Angular
 + Bootstrap
++ Firebase
 
 ## <a name="tache"></a>Tâche
 
