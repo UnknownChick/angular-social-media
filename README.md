@@ -1,27 +1,47 @@
-# SocialMediaAngular
+# Site Ecommerce Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+Projet LP AMIO : Programmation web côté client
 
-## Development server
+Site web ecommerce dévelopé avec le framework Angular
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Voir le [projet](https://ecommerce-angular-one.vercel.app/)
 
-## Code scaffolding
+## Navigation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [Equipe](#equipe)
+- [Technologies utilisées](#technologies)
+- [Commande](#commande)
+- [Documentation](#documentation)
 
-## Build
+## <a name="equipe"></a>Equipe
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+| Nom | Prénom | Email universitaire | Discord | Github |
+| - | - | - | - | - |
+| Ferreira | Alexandre | alexandre.ferreira4@etu.univ-lorraine.fr | UnknownChick#9543| [UnknownChick](https://github.com/UnknownChick) |
 
-## Running unit tests
+## <a name="technologies"></a>Technologies utilisées
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
++ HTML
++ CSS / SCSS / SASS
++ JavaScript / TypeScript
++ Node JS
++ Angular
++ Bootstrap
 
-## Running end-to-end tests
+## <a name="tache"></a>Tâche
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* [x] Mise en place du projet
+* [x] Création du composant Header
+* [ ] Ajout d'Angular Material
 
-## Further help
+## <a name="commande"></a>Commande
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```Bash
+ng serve
+```
+
+## <a name="documentation"></a>Documentation
+
+> [Node Js](https://nodejs.org/en/docs/)\
+> [Angular](https://angular.io/docs)\
+> [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
