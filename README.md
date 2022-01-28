@@ -2,7 +2,7 @@
 
 Projet LP AMIO : Programmation web côté client
 
-Réseau social dévelopé avec le framework Angular
+Réseau social développé avec le framework Angular
 
 Voir le [projet]( )
 
@@ -26,14 +26,18 @@ Voir le [projet]( )
 + JavaScript / TypeScript
 + Node JS
 + Angular
++ Angular Material
 + Bootstrap
 + Firebase
 
 ## <a name="tache"></a>Tâche
 
 * [x] Mise en place du projet
+* [x] Ajout de Bootstrap
 * [x] Création du composant Header
-* [ ] Ajout d'Angular Material
+* [x] Ajout d'Angular Material
+* [x] Création du composant Login
+* [ ] Création du composant Account
 
 ## <a name="commande"></a>Commande
 
@@ -46,3 +50,5 @@ ng serve
 > [Node Js](https://nodejs.org/en/docs/)\
 > [Angular](https://angular.io/docs)\
 > [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+> [Firebase](https://firebase.google.com/docs)
+> [Angular Material](https://material.angular.io/)

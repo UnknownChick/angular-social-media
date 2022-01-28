@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="form-container">
+    <div class="title">Créer un compte</div>
+    <form [formGroup]="createAccountForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Entrez votre email</mat-label>
+        <input matInput formControlName="email"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Entrez votre pseudo</mat-label>
+        <input matInput formControlName="username"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Entez votre mot de passe</mat-label>
+        <input type="password" matInput formControlName="password"/>
+      </mat-form-field>
+    </form>
+    {{createAccountForm.value | json }}
+    <div class="buttons-container">
+      <button class="login-button" mat-raised-button>Créer un compte</button>
+      <p>Ou</p>
+      <button routerLink="/login" mat-raised-button>Se connecter</button>
+    </div>
+  </div>
+</div>
