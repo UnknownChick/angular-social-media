@@ -3,10 +3,6 @@
 Projet LP AMIO : Programmation web côté client
 
 Réseau social développé avec le framework Angular
-
-Voir le <a href="https://social-media-angular.vercel.app/" target="_blank">projet</a>
-
-Déployé avec <a href="https://vercel.com" target="_blank">Vercel</a>
 ## Navigation
 
 - [Equipe](#equipe)
@@ -47,12 +43,12 @@ Déployé avec <a href="https://vercel.com" target="_blank">Vercel</a>
 * [x] Ajout de logic de connexion
 * [x] Redirection après connexion
 * [x] Utiliser le LocalStorage pour sauvegarder les données d'utilisateurs
-* [ ] Ajout d'un template pour le composant Posts
-* [ ] Ajout et configuration de AngularFire
-* [ ] Uplaod d'image dans Firebase
-* [ ] Création des Posts
-* [ ] Ajout de logic pour les boutons de Like
-* [ ] Ajout de logic pour les boutons de commentaires
+* [x] Ajout d'un template pour le composant Posts
+* [x] Ajout et configuration de AngularFire
+* [x] Uplaod d'image dans Firebase
+* [x] Création des Posts
+* [x] Ajout de logic pour les boutons de Like
+* [x] Ajout de logic pour les boutons de commentaires
  
 ## <a name="commande"></a>Commande pour lancer le projet
 
