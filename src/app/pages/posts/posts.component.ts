@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { finalize } from 'rxjs/operators';
+import { PostService } from 'src/app/services/post.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 @Component({
   selector: 'app-posts',
@@ -9,16 +13,145 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class PostsComponent implements OnInit {
 
-  constructor(public userService: UserService, private router: Router) { }
+  constructor(public userService:UserService, private router:Router, private storage:AngularFireStorage, public postService:PostService, private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
-	  if(this.userService.user == undefined || this.userService.user == null){
-		  let str = localStorage.getItem('user');
-		  if (str != null) {
-			  this.userService.user = JSON.parse(str);
-			}else {
-				this.router.navigate(['/login']);
-			}
-	  }
+    if(this.userService.user == undefined || this.userService.user == null){
+      let str = localStorage.getItem('user');
+      if(str != null){
+        this.userService.user = JSON.parse(str);
+      }
+      else{
+        this.router.navigate(['/login']);
+      }
+    }
+    this.postService.getPosts().then((response:any)=>{
+      this.posts = response;
+      for(let post of this.posts){
+        this.commentText.push("");
+      }
+    }).catch((error)=>{
+      console.log(error);
+    })
   }
+
+  selectedFile:any;
+  text = "";
+  posts:Array<any> = [];
+  commentText:Array<string> = [];
+
+  onFileSelected(event:any){
+    this.selectedFile = event.target.files[0];
+  }
+
+  post(){
+    this.snackbar.open('Creating the post...', '', {duration:15000});
+    if(this.selectedFile != undefined || this.selectedFile != null){
+      this.uploadImage().then((imageURL)=>{
+        console.log(imageURL);
+        let postObj = {
+          username: this.userService.user.username,
+          text : this.text,
+          imageURL: imageURL,
+          likes: [],
+          comments:[]
+        };
+        this.posts.push(postObj);
+        this.postService.saveNewPost(postObj).then((response)=>{
+          console.log(response);
+          this.snackbar.open('Posted successfully', 'ok');
+        }).catch((error)=>{
+          console.log(error);
+        });
+        this.selectedFile = undefined;
+
+      }).catch((error)=>{
+        console.log(error);
+      })
+    }
+    else{
+      let postObj = {
+        username: this.userService.user.username,
+        text : this.text,
+        imageURL: '',
+        likes: [],
+        comments:[]
+      };
+      this.posts.push(postObj);
+      this.postService.saveNewPost(postObj).then((response)=>{
+        console.log(response);
+        this.snackbar.open('Posted successfully', 'ok');
+      }).catch((error)=>{
+        console.log(error);
+      });
+    }
+  }
+
+  uploadImage() {
+    return new Promise((responseolve, reject) => {
+      let n = Date.now();
+      const file = this.selectedFile;
+      const filePath = `images/${n}`;
+      const fileRef = this.storage.ref(filePath);
+      const task = this.storage.upload(`images/${n}`, file);
+      task.snapshotChanges().pipe(
+        finalize(() => {
+          let imageURL = fileRef.getDownloadURL();
+          imageURL.subscribe((url: any) => {
+            if (url) {
+              console.log(url);
+              responseolve(url);
+            }
+          });
+        })
+      ).subscribe(
+        (url: any)=>{
+          if(url){
+            console.log(url);
+          }
+        }
+      );
+    });
+  }
+
+  like(postId:any){
+    for(let i = 0; i < this.posts.length; i++){
+      if(this.posts[i].id == postId){
+        if(this.posts[i].likes.indexOf(this.userService.user.id) >= 0){
+          this.posts[i].likes.splice(this.posts[i].likes.indexOf(this.userService.user.id), 1);
+        }
+        else{
+          this.posts[i].likes.push(this.userService.user.id);
+        }
+        this.postService.updateLikes(this.posts[i]).then((response)=>{
+          console.log(response);
+        }).catch((error)=>{
+          console.log(error);
+        })
+      }
+    }
+  }
+
+  comment(postId:any, commentIndex:any){
+    for(let i = 0; i < this.posts.length; i++){
+      if(this.posts[i].id == postId){
+        let commentObj = {
+          username: this.userService.user.username,
+          comment: this.commentText[commentIndex]
+        };
+        this.posts[i].comments.push(commentObj);
+        this.commentText[commentIndex] = "";
+        this.postService.updateComments(this.posts[i]);
+      }
+    }
+  }
+
+  postSchema = {
+    username :'',
+    imageURL:'',
+    text:'',
+    likes:[],
+    comments:[{username:'', comment:''}]
+  }
+
 }

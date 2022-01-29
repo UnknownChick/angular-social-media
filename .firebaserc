@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-social-43f5e": {
+      "hosting": {
+        "social-media-angular": [
+          "angular-social-43f5e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-social-43f5e"
+  }
+}

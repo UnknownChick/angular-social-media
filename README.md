@@ -32,6 +32,7 @@ Déployé avec <a href="https://vercel.com" target="_blank">Vercel</a>
 + Firebase
 + JSON Server
 + Material Icons
++ AngularFire
 
 ## <a name="tache"></a>Tâche
 
@@ -71,4 +72,5 @@ json-server --watch mock-api/data.json
 > [Firebase](https://firebase.google.com/docs)\
 > [Angular Material](https://material.angular.io/)\
 > [JSON Server](https://www.npmjs.com/package/json-server)\
-> [Material Icons](https://fonts.google.com/icons)
+> [Material Icons](https://fonts.google.com/icons)\
+> [AngularFire](https://www.npmjs.com/package/@angular/fire)

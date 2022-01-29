@@ -7,5 +7,27 @@
       "id": 1
     }
   ],
-  "posts": []
+  "posts": [
+    {
+      "username": "test",
+      "text": "Mon chat",
+      "imageURL": "https://firebasestorage.googleapis.com/v0/b/angular-social-43f5e.appspot.com/o/images%2F1643473590727?alt=media&token=35ce9fd6-b765-4339-b427-142790770ae0",
+      "likes": [],
+      "comments": [
+        {
+          "username": "test",
+          "comment": "test"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "username": "test",
+      "text": "azfzfaefe",
+      "imageURL": "",
+      "likes": [],
+      "comments": [],
+      "id": 2
+    }
+  ]
 }
