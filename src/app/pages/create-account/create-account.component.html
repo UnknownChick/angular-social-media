@@ -1,25 +1,34 @@
 <div class="container">
-  <div class="form-container">
-    <div class="title">Créer un compte</div>
-    <form [formGroup]="createAccountForm">
-      <mat-form-field appearance="outline">
-        <mat-label>Entrez votre email</mat-label>
-        <input matInput formControlName="email"/>
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Entrez votre pseudo</mat-label>
-        <input matInput formControlName="username"/>
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Entez votre mot de passe</mat-label>
-        <input type="password" matInput formControlName="password"/>
-      </mat-form-field>
-    </form>
-    {{createAccountForm.value | json }}
-    <div class="buttons-container">
-      <button class="login-button" mat-raised-button>Créer un compte</button>
-      <p>Ou</p>
-      <button routerLink="/login" mat-raised-button>Se connecter</button>
-    </div>
-  </div>
+	<div class="form-container">
+		<div class="title">Créer un compte</div>
+		<form [formGroup]="createAccountForm">
+			<mat-form-field appearance="outline">
+				<mat-label>Entrez votre email</mat-label>
+				<input matInput formControlName="email" />
+				<mat-error *ngIf="createAccountForm.controls.email.invalid">
+					{{createAccountForm.controls.email.hasError('required')?'L\'email est requis' : 'Entrez un email valid'}}
+				</mat-error>
+			</mat-form-field>
+			<mat-form-field appearance="outline">
+				<mat-label>Entrez votre pseudo</mat-label>
+				<input matInput formControlName="username" />
+				<mat-error *ngIf="createAccountForm.controls.username.invalid">
+					{{createAccountForm.controls.username.hasError('required')?'Le nom d\'utilisateur est requis' : 'Entrez un nom d\'utilisateur valide'}}
+				</mat-error>
+			</mat-form-field>
+			<mat-form-field appearance="outline">
+				<mat-label>Entez votre mot de passe</mat-label>
+				<input type="password" matInput formControlName="password" />
+				<mat-error *ngIf="createAccountForm.controls.password.invalid">
+					{{createAccountForm.controls.password.hasError('required')?'Le mot de passe est requis' : 'Le mot de passe doit contenir au minimum 6 caractères'}}
+				</mat-error>
+			</mat-form-field>
+		</form>
+		<!-- {{createAccountForm.value | json }} Debug-->
+		<div class="buttons-container">
+			<button class="login-button" mat-raised-button [disabled]="createAccountForm.invalid" (click)='create()'>Créer un compte</button>
+			<p>Ou</p>
+			<button routerLink="/login" mat-raised-button>Se connecter</button>
+		</div>
+	</div>
 </div>

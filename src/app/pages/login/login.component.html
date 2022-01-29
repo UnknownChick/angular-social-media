@@ -1,21 +1,23 @@
 <div class="container">
   <div class="form-container">
-    <div class="title">Se connecter</div>
-    <form [formGroup]="loginForm">
-      <mat-form-field appearance="outline">
-        <mat-label>Entrez votre email</mat-label>
-        <input matInput formControlName="email"/>
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Entez votre mot de passe</mat-label>
-        <input type="password" matInput formControlName="password"/>
-      </mat-form-field>
-    </form>
-    <!-- {{loginForm.value | json}} Debug-->
-    <div class="buttons-container">
-      <button class="login-button" mat-raised-button>Se connecter</button>
-      <p>Ou</p>
-      <button routerLink="/create-account" mat-raised-button>Créer</button>
-    </div>
+	<div class="title">Se connecter</div>
+	<form [formGroup]="loginForm">
+	  <mat-form-field appearance="outline">
+		<mat-label>Entrez votre email</mat-label>
+		<input matInput formControlName="email"/>
+		<mat-error *ngIf="loginForm.controls.email.invalid">{{loginForm.controls.email.hasError('required')?'L\'email est requis' : 'Entrez un email valid'}}</mat-error>
+	  </mat-form-field>
+	  <mat-form-field appearance="outline">
+		<mat-label>Entez votre mot de passe</mat-label>
+		<input type="password" matInput formControlName="password"/>
+		<mat-error *ngIf="loginForm.controls.password.invalid">{{loginForm.controls.password.hasError('required')?'Le mot de passe est requis' : 'Votre mot de passe doit contenir plus de 6 caractères'}}</mat-error>
+	  </mat-form-field>
+	</form>
+	<!-- {{loginForm.value | json}} Debug-->
+	<div class="buttons-container">
+	  <button class="login-button" mat-raised-button [disabled]="loginForm.invalid" (click)="login()">Se connecter</button>
+	  <p>Ou</p>
+	  <button routerLink="/create-account" mat-raised-button>Créer</button>
+	</div>
   </div>
 </div>

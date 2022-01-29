@@ -4,7 +4,9 @@ Projet LP AMIO : Programmation web côté client
 
 Réseau social développé avec le framework Angular
 
-Voir le [projet]( )
+Voir le [projet](https://social-media-angular.vercel.app/)
+
+Déployé avec [Vercel](https://vercel.com/)
 
 ## Navigation
 
@@ -17,7 +19,7 @@ Voir le [projet]( )
 
 | Nom | Prénom | Email universitaire | Discord | Github |
 | - | - | - | - | - |
-| Ferreira | Alexandre | alexandre.ferreira4@etu.univ-lorraine.fr | UnknownChick#9543| [UnknownChick](https://github.com/UnknownChick) |
+| Ferreira | Alexandre | alexandre.ferreira4@etu.univ-lorraine.fr | UnknownChick#9543 | [UnknownChick](https://github.com/UnknownChick) |
 
 ## <a name="technologies"></a>Technologies utilisées
 
@@ -29,6 +31,8 @@ Voir le [projet]( )
 + Angular Material
 + Bootstrap
 + Firebase
++ JSON Server
++ Material Icons
 
 ## <a name="tache"></a>Tâche
 
@@ -37,12 +41,27 @@ Voir le [projet]( )
 * [x] Création du composant Header
 * [x] Ajout d'Angular Material
 * [x] Création du composant Login
-* [ ] Création du composant Account
-
-## <a name="commande"></a>Commande
+* [x] Création du composant Account
+* [x] Ajout de message d'erreur
+* [x] Angular services et module HTTP Client
+* [x] Ajout de logic de connexion
+* [x] Redirection après connexion
+* [x] Utiliser le LocalStorage pour sauvegarder les données d'utilisateurs
+* [ ] Ajout d'un template pour le composant Posts
+* [ ] Ajout et configuration de AngularFire
+* [ ] Uplaod d'image dans Firebase
+* [ ] Création des Posts
+* [ ] Ajout de logic pour les boutons de Like
+* [ ] Ajout de logic pour les boutons de commentaires
+ 
+## <a name="commande"></a>Commande pour lancer le projet
 
 ```Bash
 ng serve
+```
+
+```Bash
+json-server --watch mock-api/data.json
 ```
 
 ## <a name="documentation"></a>Documentation
@@ -52,3 +71,5 @@ ng serve
 > [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 > [Firebase](https://firebase.google.com/docs)
 > [Angular Material](https://material.angular.io/)
+> [JSON Server](https://www.npmjs.com/package/json-server)
+> [Material Icons](https://fonts.google.com/icons)
