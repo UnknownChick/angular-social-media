@@ -4,9 +4,9 @@ Projet LP AMIO : Programmation web côté client
 
 Réseau social développé avec le framework Angular
 
-Voir le [projet](https://social-media-angular.vercel.app/)
+Voir le [projet](https://social-media-angular.vercel.app/){:target="_blank"}
 
-Déployé avec [Vercel](https://vercel.com/)
+Déployé avec [Vercel](https://vercel.com/){:target="_blank"}
 
 ## Navigation
 
