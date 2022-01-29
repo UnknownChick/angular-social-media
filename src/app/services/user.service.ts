@@ -26,7 +26,7 @@ export class UserService {
 
 	public getUser(email: string) {
 		return new Promise((resolve, reject) => {
-			this.http.get('http://localhost:3000/users?emial=' + email).subscribe(
+			this.http.get('http://localhost:3000/users?email=' + email).subscribe(
 				(response) => {
 					resolve(response);
 				},
