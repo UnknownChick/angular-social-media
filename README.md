@@ -67,8 +67,8 @@ json-server --watch mock-api/data.json
 
 > [Node Js](https://nodejs.org/en/docs/)\
 > [Angular](https://angular.io/docs)\
-> [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
-> [Firebase](https://firebase.google.com/docs)
-> [Angular Material](https://material.angular.io/)
-> [JSON Server](https://www.npmjs.com/package/json-server)
+> [Bootstrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/)\
+> [Firebase](https://firebase.google.com/docs)\
+> [Angular Material](https://material.angular.io/)\
+> [JSON Server](https://www.npmjs.com/package/json-server)\
 > [Material Icons](https://fonts.google.com/icons)
